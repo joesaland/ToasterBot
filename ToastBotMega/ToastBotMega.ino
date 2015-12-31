@@ -1,11 +1,11 @@
 //The setup function is called once at startup of the sketch
 #include "Servo.h"
 #include "NewPing.h"
+#include "AFMotor.h"
 
 void setup()
 {
 // Add your initialization code here
-
 }
 
 // The loop function is called in an endless loop

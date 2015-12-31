@@ -24,6 +24,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/NewPing}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Adafruit_GPS_Library}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Adafruit_Motor_Shield_library}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/SoftwareSerial}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Wire/utility}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.195346387" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -34,6 +39,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/NewPing}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Adafruit_GPS_Library}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Adafruit_Motor_Shield_library}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/SoftwareSerial}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Wire/utility}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1514105919" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>
