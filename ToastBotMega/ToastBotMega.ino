@@ -1,12 +1,10 @@
 //The setup function is called once at startup of the sketch
-
-int Stuff;
+#include "Servo.h"
+#include "NewPing.h"
 
 void setup()
 {
 // Add your initialization code here
-
-	Stuff = 0;
 
 }
 

@@ -21,6 +21,9 @@
 								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.1115690742" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/arduino/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/NewPing}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo/src}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.195346387" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -28,6 +31,9 @@
 								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.540846560" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/arduino/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/NewPing}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ToastBotMega/Libraries/Servo/src}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1514105919" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>
