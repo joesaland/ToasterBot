@@ -1,66 +1,95 @@
-//The setup function is called once at startup of the sketch
-#include "Servo.h"
-#include "NewPing.h"
-#include "AFMotor.h"
+#include "MotorController.h"
+#include "PingRadar.h"
 
-AF_DCMotor motorFR(1); // define motor on channel 1 with 1KHz default PWM
-AF_DCMotor motorFL(2); // define motor on channel 2 with 1KHz default PWM
-AF_DCMotor motorBR(4); // define motor on channel 4 with 1KHz default PWM
-AF_DCMotor motorBL(3); // define motor on channel 3 with 1KHz default PWM
 
+#define PING_PIN  7  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
+#define MAX_DISTANCE 40 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
+
+
+NewPing sonar(PING_PIN,PING_PIN,MAX_DISTANCE); // NewPing setup of pin and maximum distance.
+MotorController mC;
+Servo servo1;
+int pos;
 
 void setup() {
 // Add your initialization code here
 
-	AF_DCMotor motorFR(1); // define motor on channel 1 with 1KHz default PWM
-	AF_DCMotor motorFL(2); // define motor on channel 2 with 1KHz default PWM
-	AF_DCMotor motorBR(4); // define motor on channel 4 with 1KHz default PWM
-	AF_DCMotor motorBL(3); // define motor on channel 3 with 1KHz default PWM
+	  mC.setAllSpeed(200);
+	  servo1.attach(9);
+	  pos = 0;
 }
 
 void motorTest() {
 
-	motorFR.run(FORWARD);      // turn it on going forward
-	motorFL.run(FORWARD);      // turn it on going forward
-	motorBR.run(FORWARD);      // turn it on going forward
-	motorBL.run(FORWARD);      // turn it on going forward
-	delay(1000);
+//	mc.setAllRun(FORWARD);      // turn it on going forward
 
-	motorFR.run(BACKWARD);      // turn it on going forward
-	motorFL.run(FORWARD);      // turn it on going forward
-	motorBR.run(BACKWARD);      // turn it on going forward
-	motorBL.run(FORWARD);      // turn it on going forward
-	delay(1000);
+	delay(2000);
+	mC.setAllRun(RELEASE);      // stopped	delay(2000);
 
-	motorFR.run(FORWARD);      // turn it on going forward
-	motorFL.run(FORWARD);      // turn it on going forward
-	motorBR.run(FORWARD);      // turn it on going forward
-	motorBL.run(FORWARD);      // turn it on going forward
-	delay(1000);
+	mC.setMotorRun(FR,BACKWARD);      // turn it on going forward
+	mC.setMotorRun(FL,FORWARD);      // turn it on going forward
+	mC.setMotorRun(RR,BACKWARD);      // turn it on going forward
+	mC.setMotorRun(RL,FORWARD);      // turn it on going forward
+	delay(2000);
 
-	motorFR.run(FORWARD);      // turn it on going forward
-	motorFL.run(BACKWARD);      // turn it on going forward
-	motorBR.run(FORWARD);      // turn it on going forward
-	motorBL.run(BACKWARD);      // turn it on going forward
-	delay(1000);
+	mC.setAllRun(RELEASE);      // stopped
+	delay(2000);
 
-	motorFR.run(BACKWARD);      // turn it on going forward
-	motorFL.run(BACKWARD);      // turn it on going forward
-	motorBR.run(BACKWARD);      // turn it on going forward
-	motorBL.run(BACKWARD);      // turn it on going forward
-	delay(1000);
+//	mc.setAllRun(FORWARD);      // turn it on going forward
+//	delay(2000);
 
-	motorFR.run(RELEASE);      // stopped
-	motorFL.run(RELEASE);      // stopped
-	motorBR.run(RELEASE);      // stopped
-	motorBL.run(RELEASE);      // stopped
-	delay(1000);
+//	mc.setAllRun(RELEASE);      // stopped
+//	delay(2000);
+
+	mC.setMotorRun(FR,FORWARD);      // turn it on going forward
+	mC.setMotorRun(FL,BACKWARD);      // turn it on going forward
+	mC.setMotorRun(RR,FORWARD);      // turn it on going forward
+	mC.setMotorRun(RL,BACKWARD);      // turn it on going forward
+	delay(2000);
+
+	mC.setAllRun(RELEASE);      // stopped
+	delay(2000);
+
+//	mc.setAllRun(BACKWARD);      // stopped
+//	delay(2000);
+
+//	mc.setAllRun(RELEASE);      // stopped
+//	delay(2000);
+
+}
+
+void radarTest() {
+
+	for (pos=15; pos<165; pos++) {
+	    servo1.write(pos);
+	    delay(50);                      // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
+	    unsigned int uS = sonar.ping_median(5); // Send ping, get ping time in microseconds (uS).
+	    Serial.print(pos);
+	    Serial.print(",");
+	    Serial.print(uS / US_ROUNDTRIP_CM);
+	    Serial.print(".");
+	 }
+
+
+	   for (pos=165; pos>015; pos--) {
+	    servo1.write(pos);
+	    delay(50);
+	    unsigned int uS = sonar.ping_median(5); // Send ping, get ping time in microseconds (uS).
+	    Serial.print(pos);
+	    Serial.print(",");
+	    Serial.print(uS / US_ROUNDTRIP_CM);
+	    Serial.print(".");
+	 }
 }
 
 // The loop function is called in an endless loop
 void loop() {
 //Add your repeated code here
 
+//	radarTest();
+//	delay(2000);
+
 	motorTest();
+	delay(2000);
 
 }
